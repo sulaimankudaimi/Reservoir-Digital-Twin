@@ -6,3 +6,4 @@ lasio
 scipy
 scikit-learn
 requests
+Plaintext
