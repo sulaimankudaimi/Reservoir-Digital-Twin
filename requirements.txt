@@ -2,8 +2,4 @@ streamlit
 pandas
 numpy
 plotly
-lasio
 scipy
-scikit-learn
-requests
-Plaintext
