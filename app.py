@@ -31,33 +31,27 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# --- 2. الشريط الجانبي وتوثيق المطور ---
 with st.sidebar:
-    # بطاقة المطور الاحترافية (Professional Signature)
     st.markdown(f"""
         <div style='padding: 20px; border-radius: 15px; background: linear-gradient(135deg, #1e293b, #334155); border: 2px solid #3b82f6; text-align: center;'>
             <p style='margin:0; color:#94a3b8; font-size: 0.8em; text-transform: uppercase; letter-spacing: 2px;'>System Architect</p>
             <h2 style='margin:10px 0; color:white; font-family:serif;'>SULAIMAN KUDAIMI</h2>
             <p style='margin:0; color:#60a5fa; font-size: 0.9em; font-weight: bold;'>Senior Reservoir Digital Lead</p>
-            <hr style='border: 0; border-top: 1px solid #475569; margin: 15px 0;'>
-            <p style='margin:0; color:#10b981; font-size: 0.75em;'>● PROPRIETARY ENGINE v1.2</p>
         </div>
     """, unsafe_allow_html=True)
+
+    st.markdown("---")
+    st.markdown("<h3 style='color: #f8fafc;'>🌐 Universal Data Ingest</h3>", unsafe_allow_html=True)
     
-    st.markdown("<br>", unsafe_allow_html=True)
+    # ميزة رفع الملفات لأي حقل في العالم
+    uploaded_file = st.file_uploader("Upload Reservoir CSV/LAS", type=['csv', 'las'])
     
-    # تحسين وضوح نصوص القائمة الجانبية
-    st.markdown("<h3 style='color: #f8fafc;'>📂 Data Navigator</h3>", unsafe_allow_html=True)
-    data_mode = st.selectbox("", ["Well Depth (CSV)", "Production Logs"], label_visibility="collapsed")
+    if uploaded_file is not None:
+        st.success("✅ New Field Data Detected")
+        # هنا يمكن إضافة منطق قراءة الملف المرفوع
     
     st.markdown("<h3 style='color: #f8fafc;'>🎛️ Simulation Controls</h3>", unsafe_allow_html=True)
-    forecast_horizon = st.slider("", 2026, 2035, 2026, label_visibility="collapsed")
-    
-    # نص توضيحي بلون فاتح جداً للوضوح
-    st.markdown(f"<p style='color: #cbd5e1; font-size: 0.9em;'>Current Simulation Horizon: <b>{forecast_horizon}</b></p>", unsafe_allow_html=True)
-    
-    st.markdown("---")
-    st.markdown("<p style='color: #94a3b8; font-size: 0.8em; text-align: center;'>Designed & Developed by Sulaiman Kudaimi</p>", unsafe_allow_html=True)
+    forecast_horizon = st.slider("", 2026, 2035, 2026, label_visibility="collapsed") st.markdown("<p style='color: #94a3b8; font-size: 0.8em; text-align: center;'>Designed & Developed by Sulaiman Kudaimi</p>", unsafe_allow_html=True)
 # --- 3. العنوان الرئيسي للواجهة ---
 st.markdown("<div class='main-header'><h1>Deep-Earth Digital Twin Platform</h1><p>Developed by: <b>Sulaiman Kudaimi</b> | 2026 Reservoir Analytics</p></div>", unsafe_allow_html=True)
 
